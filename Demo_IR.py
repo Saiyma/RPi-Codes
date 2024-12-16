@@ -9,14 +9,12 @@ GPIO.setup(sensor,GPIO.IN)
 GPIO.setup(buzzer,GPIO.OUT)
 
 GPIO.output(buzzer,False)
-print "IR Sensor Ready....."
-print " "
-
+print("IR Sensor Ready.....")
 try: 
    while True:
       if GPIO.input(sensor):
           GPIO.output(buzzer,True)
-          print "Object Detected"
+          print("Object Detected")
           while GPIO.input(sensor):
               time.sleep(0.2)
       else:
